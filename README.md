@@ -1,7 +1,4 @@
 # Food Ordering App
-
-![Project Video](github-files/final_app_v_1.gif)
-
 ## Description
 
 This project represents a modern web application designed to streamline the food ordering process while offering an intuitive and user-friendly experience. The application provides the following key features:
