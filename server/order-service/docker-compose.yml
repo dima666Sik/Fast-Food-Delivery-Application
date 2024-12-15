@@ -1,0 +1,40 @@
+services:
+
+  postgres-order-info:
+    container_name: postgres-order-info
+    image: postgres
+    volumes:
+      - postgres-order-info-data:/data/postgres
+    environment:
+      POSTGRES_USER: dimasik666
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: orders_info_db
+    ports:
+      - "5435:5432"
+    networks:
+      - postgres-network
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./definitions.json:/etc/rabbitmq/definitions.json
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - rabbitmq-network
+
+volumes:
+  postgres-order-info-data:
+
+networks:
+  postgres-network:
+    external: true
+  rabbitmq-network:
+    driver: bridge

@@ -1,0 +1,26 @@
+.bi.bi-check2-circle {
+	color: rgb(255, 187, 0);
+}
+
+.fast__food__title span {
+	color: rgb(255, 187, 0);
+}
+
+.fast__food__desc {
+	color: #888;
+	line-height: 28px;
+}
+
+.choose__us__title {
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.choose__us__title i {
+	font-weight: 500 !important;
+	color: rgb(255, 187, 0);
+}
+
+.choose__us__desc {
+	color: #888;
+}
